@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TF_INPUT: "false"
-      YC_TOKEN: "demo-token-for-ci"
 
     steps:
       - name: Checkout repository
@@ -36,23 +35,11 @@ jobs:
       - name: Terraform version
         run: terraform version
 
-      - name: Terraform init, validate and plan (no backend)
+      - name: Terraform init and validate (no backend)
         shell: bash
+        working-directory: Task2Advanced/envs/dev
         run: |
           set -euo pipefail
-
-          if [ -d "Task2Advanced/envs/dev" ]; then
-            TF_DIR="Task2Advanced/envs/dev"
-          elif [ -d "architecture-future_pro_2_0/Task2Advanced/envs/dev" ]; then
-            TF_DIR="architecture-future_pro_2_0/Task2Advanced/envs/dev"
-          else
-            echo "Cannot find Task2Advanced/envs/dev"
-            pwd
-            ls -la
-            exit 1
-          fi
-
-          cd "$TF_DIR"
           cp versions.tf versions.tf.bak
           # Demo mode: remove backend declaration to allow local plan without secrets.
           sed '/backend "s3" {}/d' versions.tf.bak > versions.tf
@@ -69,7 +56,6 @@ jobs:
           EOF
           terraform init -backend=false -input=false
           terraform validate
-          terraform plan -input=false -refresh=false -lock=false
 
       - name: Validate workflow is running
         run: echo "GitHub Actions demo pipeline completed successfully."

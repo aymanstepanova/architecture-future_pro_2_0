@@ -1,0 +1,40 @@
+name: Input Variable Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: "Сообщение для вывода в логах"
+        required: true
+        default: "Привет из GitHub Actions"
+        type: string
+      repeat_count:
+        description: "Сколько раз вывести сообщение"
+        required: true
+        default: "3"
+        type: string
+
+jobs:
+  show-input:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print input values
+        run: |
+          echo "Message: ${{ github.event.inputs.message }}"
+          echo "Repeat count: ${{ github.event.inputs.repeat_count }}"
+
+      - name: Repeat message
+        shell: bash
+        run: |
+          set -euo pipefail
+          count="${{ github.event.inputs.repeat_count }}"
+          msg="${{ github.event.inputs.message }}"
+
+          if ! [[ "$count" =~ ^[0-9]+$ ]]; then
+            echo "repeat_count must be a non-negative integer"
+            exit 1
+          fi
+
+          for ((i=1; i<=count; i++)); do
+            echo "$i) $msg"
+          done
