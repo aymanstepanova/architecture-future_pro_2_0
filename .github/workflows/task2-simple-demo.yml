@@ -14,6 +14,8 @@ on:
 jobs:
   demo:
     runs-on: ubuntu-latest
+    env:
+      TF_INPUT: "false"
 
     steps:
       - name: Checkout repository
@@ -53,9 +55,20 @@ jobs:
           cp versions.tf versions.tf.bak
           # Demo mode: remove backend declaration to allow local plan without secrets.
           sed '/backend "s3" {}/d' versions.tf.bak > versions.tf
-          terraform init -backend=false
+          cat > ci.auto.tfvars <<'EOF'
+          cloud_id       = "demo-cloud-id"
+          folder_id      = "demo-folder-id"
+          zone           = "ru-central1-a"
+          vm_name        = "demo-vm"
+          cores          = 2
+          memory_gb      = 2
+          disk_size_gb   = 10
+          subnet_id      = "demo-subnet-id"
+          ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDemoPublicKeyForCIOnly"
+          EOF
+          terraform init -backend=false -input=false
           terraform validate
-          terraform plan -refresh=false -lock=false
+          terraform plan -input=false -refresh=false -lock=false
 
       - name: Validate workflow is running
         run: echo "GitHub Actions demo pipeline completed successfully."
