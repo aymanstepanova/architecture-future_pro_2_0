@@ -33,5 +33,13 @@ jobs:
       - name: Terraform version
         run: terraform version
 
+      - name: Terraform init (no backend)
+        working-directory: Task2Advanced/envs/dev
+        run: terraform init -backend=false
+
+      - name: Terraform validate
+        working-directory: Task2Advanced/envs/dev
+        run: terraform validate
+
       - name: Validate workflow is running
         run: echo "GitHub Actions demo pipeline completed successfully."
