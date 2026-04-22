@@ -33,13 +33,25 @@ jobs:
       - name: Terraform version
         run: terraform version
 
-      - name: Terraform init (no backend)
-        working-directory: Task2Advanced/envs/dev
-        run: terraform init -backend=false
+      - name: Terraform init and validate (no backend)
+        shell: bash
+        run: |
+          set -euo pipefail
 
-      - name: Terraform validate
-        working-directory: Task2Advanced/envs/dev
-        run: terraform validate
+          if [ -d "Task2Advanced/envs/dev" ]; then
+            TF_DIR="Task2Advanced/envs/dev"
+          elif [ -d "architecture-future_pro_2_0/Task2Advanced/envs/dev" ]; then
+            TF_DIR="architecture-future_pro_2_0/Task2Advanced/envs/dev"
+          else
+            echo "Cannot find Task2Advanced/envs/dev"
+            pwd
+            ls -la
+            exit 1
+          fi
+
+          cd "$TF_DIR"
+          terraform init -backend=false
+          terraform validate
 
       - name: Validate workflow is running
         run: echo "GitHub Actions demo pipeline completed successfully."
