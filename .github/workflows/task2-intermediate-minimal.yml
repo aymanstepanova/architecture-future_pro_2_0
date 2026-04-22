@@ -21,6 +21,10 @@ on:
           - stage
           - prod
 
+concurrency:
+  group: task2-intermediate-${{ github.event.inputs.tf_env || 'dev' }}-${{ github.ref }}
+  cancel-in-progress: false
+
 env:
   TF_IN_AUTOMATION: "true"
   TF_INPUT: "false"
