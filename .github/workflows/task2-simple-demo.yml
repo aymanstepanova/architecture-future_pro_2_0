@@ -33,7 +33,7 @@ jobs:
       - name: Terraform version
         run: terraform version
 
-      - name: Terraform init and validate (no backend)
+      - name: Terraform init, validate and plan (no backend)
         shell: bash
         run: |
           set -euo pipefail
@@ -52,6 +52,7 @@ jobs:
           cd "$TF_DIR"
           terraform init -backend=false
           terraform validate
+          terraform plan -refresh=false -lock=false
 
       - name: Validate workflow is running
         run: echo "GitHub Actions demo pipeline completed successfully."
