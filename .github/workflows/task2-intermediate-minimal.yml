@@ -5,6 +5,10 @@ on:
     paths:
       - "Task2Advanced/**"
       - ".github/workflows/task2-intermediate-minimal.yml"
+  pull_request:
+    paths:
+      - "Task2Advanced/**"
+      - ".github/workflows/task2-intermediate-minimal.yml"
   workflow_dispatch:
     inputs:
       tf_env:
@@ -124,3 +128,13 @@ jobs:
           name: tfplan-minimal-${{ env.TF_ENV }}-${{ github.sha }}
           path: Task2Advanced/envs/${{ env.TF_ENV }}/tfplan
           retention-days: 7
+
+  apply-simulated:
+    name: Apply (manual approval simulated)
+    needs: plan-minimal
+    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    environment: terraform-apply
+    steps:
+      - name: Имитация terraform apply
+        run: echo "Simulated terraform apply for ${TF_ENV}. Manual approval gate passed."
