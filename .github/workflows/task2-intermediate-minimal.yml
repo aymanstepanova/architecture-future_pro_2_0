@@ -136,4 +136,4 @@ jobs:
     environment: terraform-apply
     steps:
       - name: Имитация terraform apply
-        run: echo "Simulated terraform apply for ${TF_ENV}. Manual approval gate passed."
+        run: echo "Имитация terraform apply для окружения ${TF_ENV}. Ручное подтверждение пройдено."
