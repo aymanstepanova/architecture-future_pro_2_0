@@ -1,0 +1,16 @@
+# Скопируйте в dev.tfvars и подставьте свои значения.
+# Провайдер: YC_TOKEN в окружении или `yc config get token`.
+# Backend: см. backend-config.example и README.
+
+cloud_id  = "b1gxxxxxxxxxxxxxxxx"
+folder_id = "b1gxxxxxxxxxxxxxxxx"
+zone      = "ru-central1-a"
+
+vm_name      = "app-vm-dev"
+cores        = 2
+memory_gb    = 4
+disk_size_gb = 20
+
+subnet_id = "e9bxxxxxxxxxxxxxxxx"
+
+ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIReplaceWithYourPublicKey"

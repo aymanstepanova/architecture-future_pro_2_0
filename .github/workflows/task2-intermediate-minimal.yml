@@ -25,26 +25,25 @@ env:
   TF_IN_AUTOMATION: "true"
   TF_INPUT: "false"
   TF_ENV: ${{ github.event.inputs.tf_env || 'dev' }}
+  # Общие Variables/Secrets для plan/apply
+  TF_STATE_BUCKET: ${{ vars.TF_STATE_BUCKET }}
+  TF_VAR_cloud_id: ${{ vars.TF_VAR_CLOUD_ID }}
+  TF_VAR_folder_id: ${{ vars.TF_VAR_FOLDER_ID }}
+  TF_VAR_zone: ${{ vars.TF_VAR_ZONE }}
+  TF_VAR_subnet_id: ${{ vars.TF_VAR_SUBNET_ID }}
+  TF_VAR_ssh_public_key: ${{ secrets.TF_VAR_SSH_PUBLIC_KEY }}
+  YC_TOKEN: ${{ secrets.YC_TOKEN }}
+  S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+  S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+  # Бэкенд Terraform S3 использует имена переменных окружения AWS_*.
+  AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
 
 jobs:
   plan-minimal:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    env:
-      # Минимальный набор GitHub Variables
-      TF_STATE_BUCKET: ${{ vars.TF_STATE_BUCKET }}
-      TF_VAR_cloud_id: ${{ vars.TF_VAR_CLOUD_ID }}
-      TF_VAR_folder_id: ${{ vars.TF_VAR_FOLDER_ID }}
-      TF_VAR_zone: ${{ vars.TF_VAR_ZONE }}
-
-      # Минимальный набор GitHub Secrets
-      YC_TOKEN: ${{ secrets.YC_TOKEN }}
-      S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
-      S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
-      # Бэкенд Terraform S3 использует имена переменных окружения AWS_*.
-      AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
     steps:
       - uses: actions/checkout@v4
 
@@ -65,6 +64,8 @@ jobs:
             TF_VAR_cloud_id
             TF_VAR_folder_id
             TF_VAR_zone
+            TF_VAR_subnet_id
+            TF_VAR_ssh_public_key
             YC_TOKEN
             S3_ACCESS_KEY_ID
             S3_SECRET_ACCESS_KEY
@@ -93,6 +94,7 @@ jobs:
           skip_requesting_account_id = true
           skip_metadata_api_check = true
           use_path_style = true
+          skip_s3_checksum = true
           encrypt = true
           EOF
 
@@ -102,8 +104,8 @@ jobs:
           cores          = 2
           memory_gb      = 2
           disk_size_gb   = 10
-          subnet_id      = "e9b-demo-subnet-id"
-          ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDemoPublicKeyForCi"
+          subnet_id      = "${TF_VAR_subnet_id}"
+          ssh_public_key = "${TF_VAR_ssh_public_key}"
           EOF
 
           terraform init -input=false -backend-config=backend.hcl
@@ -137,16 +139,6 @@ jobs:
       (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
     environment: terraform-apply
-    env:
-      TF_STATE_BUCKET: ${{ vars.TF_STATE_BUCKET }}
-      TF_VAR_cloud_id: ${{ vars.TF_VAR_CLOUD_ID }}
-      TF_VAR_folder_id: ${{ vars.TF_VAR_FOLDER_ID }}
-      TF_VAR_zone: ${{ vars.TF_VAR_ZONE }}
-      YC_TOKEN: ${{ secrets.YC_TOKEN }}
-      S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
-      S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
-      AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
@@ -176,6 +168,7 @@ jobs:
           skip_requesting_account_id = true
           skip_metadata_api_check = true
           use_path_style = true
+          skip_s3_checksum = true
           encrypt = true
           EOF
 
