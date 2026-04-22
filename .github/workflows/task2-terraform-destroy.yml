@@ -1,4 +1,4 @@
-name: Task2 Rollback
+name: Task2 Terraform — destroy
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - task
     paths:
       - "Task2Advanced/**"
-      - ".github/workflows/task2-intermediate-destroy.yml"
+      - ".github/workflows/task2-terraform-destroy.yml"
   workflow_dispatch:
     inputs:
       tf_env:
