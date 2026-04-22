@@ -50,6 +50,9 @@ jobs:
           fi
 
           cd "$TF_DIR"
+          cp versions.tf versions.tf.bak
+          # Demo mode: remove backend declaration to allow local plan without secrets.
+          sed '/backend "s3" {}/d' versions.tf.bak > versions.tf
           terraform init -backend=false
           terraform validate
           terraform plan -refresh=false -lock=false
