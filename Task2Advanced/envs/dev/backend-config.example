@@ -1,0 +1,19 @@
+# Скопируйте в backend.hcl (не коммитить) или передайте через terraform init -backend-config=...
+# Бакет и ключи доступа создайте в Yandex Object Storage (см. README Task2Advanced).
+
+bucket = "your-terraform-state-bucket"
+key    = "task2/dev/terraform.tfstate"
+region = "ru-central1"
+
+endpoints = {
+  s3 = "https://storage.yandexcloud.net"
+}
+
+skip_credentials_validation = true
+skip_region_validation      = true
+skip_requesting_account_id  = true
+skip_metadata_api_check     = true
+use_path_style              = true
+encrypt = true
+
+# Опционально (Terraform >= 1.10): use_lockfile = true — блокировка state через объект .tflock в бакете.
