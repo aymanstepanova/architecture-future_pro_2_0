@@ -1,6 +1,11 @@
 name: Input Variable Demo
 
 on:
+  push:
+    branches:
+      - task-2
+    paths:
+      - ".github/workflows/input-variable-demo.yml"
   workflow_dispatch:
     inputs:
       message:
@@ -17,18 +22,21 @@ on:
 jobs:
   show-input:
     runs-on: ubuntu-latest
+    env:
+      DEMO_MESSAGE: ${{ github.event.inputs.message || 'Привет из push-trigger' }}
+      DEMO_REPEAT_COUNT: ${{ github.event.inputs.repeat_count || '2' }}
     steps:
       - name: Print input values
         run: |
-          echo "Message: ${{ github.event.inputs.message }}"
-          echo "Repeat count: ${{ github.event.inputs.repeat_count }}"
+          echo "Message: ${DEMO_MESSAGE}"
+          echo "Repeat count: ${DEMO_REPEAT_COUNT}"
 
       - name: Repeat message
         shell: bash
         run: |
           set -euo pipefail
-          count="${{ github.event.inputs.repeat_count }}"
-          msg="${{ github.event.inputs.message }}"
+          count="${DEMO_REPEAT_COUNT}"
+          msg="${DEMO_MESSAGE}"
 
           if ! [[ "$count" =~ ^[0-9]+$ ]]; then
             echo "repeat_count must be a non-negative integer"
