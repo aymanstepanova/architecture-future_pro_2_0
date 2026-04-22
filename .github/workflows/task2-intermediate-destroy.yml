@@ -90,14 +90,13 @@ jobs:
           bucket = "${TF_STATE_BUCKET}"
           key    = "task2/${TF_ENV}/terraform.tfstate"
           region = "ru-central1"
-          endpoints = { s3 = "https://storage.yandexcloud.net" }
+          endpoint = "https://storage.yandexcloud.net"
           skip_credentials_validation = true
           skip_region_validation = true
           skip_requesting_account_id = true
           skip_metadata_api_check = true
           use_path_style = true
           skip_s3_checksum = true
-          encrypt = true
           EOF
 
           cat > ci.auto.tfvars <<EOF
