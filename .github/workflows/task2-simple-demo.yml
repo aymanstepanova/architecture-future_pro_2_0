@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TF_INPUT: "false"
+      YC_TOKEN: "demo-token-for-ci"
 
     steps:
       - name: Checkout repository
