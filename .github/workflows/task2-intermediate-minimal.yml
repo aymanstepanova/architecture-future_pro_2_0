@@ -44,6 +44,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Ручной запуск подтвержден
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: echo "Workflow запущен вручную для окружения ${TF_ENV}"
+
       - uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: "1.9.0"
