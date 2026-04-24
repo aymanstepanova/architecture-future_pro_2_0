@@ -1,0 +1,91 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram id="task3-risk-map" name="Risk Map">
+    <mxGraphModel dx="4384" dy="934" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;h1&gt;Task3Advanced - Карта рисков трансформации&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-2550" y="60" width="900" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xLabel" value="Вероятность" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-2650" y="180" width="980" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yLabel" value="Влияние на бизнес" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=13;fontStyle=1;rotation=-90" parent="1" vertex="1">
+          <mxGeometry x="-2690" y="485" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hLow" value="Низкая" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="-2510" y="210" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hMed" value="Средняя" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="-2230" y="210" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hHigh" value="Высокая" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="-1950" y="210" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rowHigh" value="Высокое" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="-2610" y="240" width="90" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="rowMed" value="Среднее" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="-2610" y="420" width="90" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="rowLow" value="Низкое" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="-2610" y="600" width="90" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="-2510" y="240" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="-2230" y="240" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ea9999;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="-1950" y="240" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c21" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="-2510" y="420" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c22" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="-2230" y="420" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c23" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="-1950" y="420" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c31" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="-2510" y="600" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c32" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="-2230" y="600" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c33" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="-1950" y="600" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="r7" value="R7: ИБ/комплаенс PHI/финтех" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-2470" y="280" width="200" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" value="R1: Перегрузка событийной шины" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-2190" y="280" width="210" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" value="R3: Неконсистентные схемы событий" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-1930" y="280" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" value="R4: Низкая наблюдаемость потоков" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-1930" y="346" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" value="R2: Дублирование логики (домены + DWH)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-1910" y="460" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="r6" value="R6: Конфликт владения данными" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-1910" y="526" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="r5" value="R5: Нехватка DDD/EDA компетенций" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-2190" y="484" width="210" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="r8" value="R8: Долгая зависимость от Camel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-1910" y="664" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="ID рисков соответствует `risks.md` и `risk-mitigation-plan.md`" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-2510" y="820" width="840" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,178 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram id="task3-c4-l2" name="C4 Level 2 - Containers">
+    <mxGraphModel dx="2852" dy="1682" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object placeholders="1" c4Name="Безопасный аналитический контур self-service" c4Type="SystemScopeBoundary" c4Application="Только обезличенные и агрегированные data products; медкарты, истории болезни и результаты исследований не выдаются в self-service" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;&lt;div style=&quot;&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;&quot;&gt;[%c4Application%]&lt;/div&gt;" id="selfServiceBoundary">
+          <mxCell style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=11;fillColor=default;strokeColor=#0E7DAD;fontColor=#0D5091;align=center;verticalAlign=top;spacing=10;dashPattern=8 4;movable=1;resizable=1;rotatable=1;deletable=1;locked=0;connectable=1;allowArrows=0;metaEdit=1;editable=1;" parent="1" vertex="1">
+            <mxGeometry x="1140" y="470" width="600" height="530" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="title" value="&lt;h1&gt;C4 Level 2 - Целевая событийная платформа данных (3 года)&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="150" y="30" width="1500" height="70" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Граница платформы данных Будущее 2.0" c4Type="SystemScopeBoundary" c4Application="Целевое состояние: событийная и доменно-ориентированная интеграция" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;&lt;div style=&quot;&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;&quot;&gt;[%c4Application%]&lt;/div&gt;" id="boundary">
+          <mxCell style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#444444;fontColor=#333333;align=center;verticalAlign=top;spacing=10;dashPattern=8 4;movable=1;resizable=1;rotatable=1;deletable=1;locked=0;connectable=1;allowArrows=0;metaEdit=1;editable=1;" parent="1" vertex="1">
+            <mxGeometry x="80" y="260" width="980" height="740" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Доменные системы (клиники, финтех, ИИ, backoffice)" c4Type="Software System" c4Description="Публикуют и потребляют доменные события: producer в Ingestion, consumer по подпискам с шины" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="src">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="80" y="120" width="420" height="110" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Self-service BI Portal" c4Type="Software System" c4Description="Пользовательская аналитика в рамках прав доступа" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="bi">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="1260" y="550" width="360" height="110" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="BI Analyst" c4Type="Person" c4Description="Пользователь self-service отчетов; доступ только к обезличенным и агрегированным витринам" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="biAnalyst">
+          <mxCell style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#6C6477;strokeColor=#4D4D4D;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="1340" y="190" width="200" height="180" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Data Steward / Security Officer" c4Type="Person" c4Description="Управляет политиками доступа, классификацией и контролями качества данных" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="securityOfficer">
+          <mxCell style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="1340" y="1070" width="200" height="180" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="API Gateway &amp; Ingestion" c4Type="Container" c4Technology="Go/Java, Kubernetes" c4Description="Прием событий/батчей, authN/authZ, базовая валидация" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ingestion">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="140" y="340" width="300" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Event Backbone" c4Type="Container" c4Technology="Kafka-compatible cluster" c4Description="Транспорт доменных событий, retry и DLQ" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="backbone">
+          <mxCell style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;size=15;direction=south;fillColor=#23A2D9;fontColor=#ffffff;strokeColor=#0E7DAD;fontSize=11;labelBackgroundColor=none;align=center;metaEdit=1;resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="670" y="340" width="300" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Stream Processing &amp; Data Products" c4Type="Container" c4Technology="Flink/Spark Structured Streaming" c4Description="Обработка потоков, бизнес-правила, формирование data products" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="stream">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="640" y="550" width="360" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Data Lakehouse" c4Type="Container" c4Technology="S3/MinIO + table format + query engine" c4Description="Bronze/Silver/Gold зоны, доменные витрины" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="lakehouse">
+          <mxCell style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#23A2D9;fontColor=#ffffff;strokeColor=#0E7DAD;fontSize=11;labelBackgroundColor=none;align=center;metaEdit=1;resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="670" y="810" width="300" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Data Access &amp; Governance" c4Type="Container" c4Technology="Policy engine, catalog, lineage" c4Description="RLS/CLS, каталог данных, контроль доступов и качества" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="governance">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="1270" y="810" width="340" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Observability Platform" c4Type="Container" c4Technology="OpenTelemetry + Metrics + Logs" c4Description="SLO, tracing, потоковые лаги, алерты" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="obs">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="140" y="1040" width="300" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Legacy Integration Bridge (временно)" c4Type="Container" c4Technology="Apache Camel + adapters" c4Description="Переходный слой совместимости до де-комиссии" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="camelBridge">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#999999;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#828282;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="240" y="550" width="320" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Legacy DWH (временный read model)" c4Type="Container" c4Technology="MS SQL Server 2008" c4Description="Исторические отчеты и совместимость на переходе" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="dwh">
+          <mxCell style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#828282;fontColor=#ffffff;strokeColor=#999999;fontSize=11;labelBackgroundColor=none;align=center;metaEdit=1;resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="260" y="730" width="280" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS/gRPC/Events" c4Description="Публикация событий/данных" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="r1">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;metaEdit=1;" parent="1" source="src" target="ingestion" edge="1">
+            <mxGeometry x="-0.0909" y="10" relative="1" as="geometry">
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Consumer API (Kafka) / gRPC" c4Description="Потребление релевантных событий" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="r1_consume">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;dashed=1;metaEdit=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="backbone" target="src" edge="1">
+            <mxGeometry x="-0.2399" y="-10" relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="870" y="180" />
+              </Array>
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Публикация событий" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="r2">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;metaEdit=1;" parent="1" source="ingestion" target="backbone" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Потоковая обработка" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="r3">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;metaEdit=1;" parent="1" source="backbone" target="stream" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Загрузка Bronze/Silver/Gold" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="r4">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;metaEdit=1;" parent="1" source="stream" target="lakehouse" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Политики доступа и качество" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="r5">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;startArrow=blockThin;startFill=1;metaEdit=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="governance" target="lakehouse" edge="1">
+            <mxGeometry x="0.0667" relative="1" as="geometry">
+              <mxPoint x="1200" y="869.66" as="sourcePoint" />
+              <mxPoint x="1070" y="870" as="targetPoint" />
+              <Array as="points" />
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Доступ только к обезличенным и агрегированным витринам &#xa;(без медкарт, историй и результатов исследований)" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="r6">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;metaEdit=1;" parent="1" source="governance" target="bi" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Совместимость с легаси (переходный период)" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="r7">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;dashed=1;metaEdit=1;" parent="1" source="backbone" target="camelBridge" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Временная синхронизация" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="r8">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;dashed=1;metaEdit=1;" parent="1" source="camelBridge" target="dwh" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Метрики, трассировка и алерты" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="r9">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;dashed=1;metaEdit=1;entryX=0.084;entryY=0.006;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1" target="obs">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="170" y="459.9999999999998" as="sourcePoint" />
+              <mxPoint x="170" y="1060" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Метрики потоков" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="r10">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;dashed=1;edgeStyle=orthogonalEdgeStyle;metaEdit=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="stream" edge="1" target="obs">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="640" y="1070" />
+              </Array>
+              <mxPoint x="820.0000000000005" y="649.9999999999998" as="sourcePoint" />
+              <mxPoint x="440" y="1100" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Потребляет self-service аналитические витрины &#xa;(только обезличенные/агрегированные данные)" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="r11">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;metaEdit=1;" parent="1" edge="1">
+            <mxGeometry x="-0.375" relative="1" as="geometry">
+              <mxPoint x="1439.5" y="370" as="sourcePoint" />
+              <mxPoint x="1439.5" y="550" as="targetPoint" />
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="Администрирует RLS/CLS-политики, &#xa;каталог и правила доступа" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="r12">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;metaEdit=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="securityOfficer" target="governance" edge="1">
+            <mxGeometry x="-0.4286" relative="1" as="geometry">
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <mxCell id="AXezboCCXjjzDKt82VYA-1" value="Потребление релевантных событий по подпискам (consumers, в т.ч. ИИ — по контрактам и ACL)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=#000000;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=none;fillStyle=solid;direction=west;gradientDirection=north;gradientColor=#FFF2A1;shadow=1;size=20;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="110" width="210" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
