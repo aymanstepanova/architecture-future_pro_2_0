@@ -2,8 +2,6 @@ name: Task2 Terraform — destroy
 
 on:
   pull_request:
-    branches:
-      - task
     paths:
       - "Task2Advanced/**"
       - ".github/workflows/task2-terraform-destroy.yml"
