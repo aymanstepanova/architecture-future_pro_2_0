@@ -1,0 +1,9 @@
+.terraform/
+# Локальные значения (cloud_id, subnet_id, SSH); в git — только *.tfvars.example
+*.tfvars
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf

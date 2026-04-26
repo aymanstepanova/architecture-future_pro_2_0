@@ -1,0 +1,106 @@
+name: Task2 Terraform — destroy
+
+on:
+  pull_request:
+    paths:
+      - "Task2Advanced/**"
+      - ".github/workflows/task2-terraform-destroy.yml"
+  workflow_dispatch:
+    inputs:
+      tf_env:
+        description: "Окружение для destroy (dev / stage / prod)"
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - stage
+          - prod
+
+env:
+  TF_IN_AUTOMATION: "true"
+  TF_INPUT: "false"
+  TF_ENV: ${{ github.event.inputs.tf_env || 'dev' }}
+
+jobs:
+  destroy:
+    name: Terraform destroy (manual approval)
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    environment: terraform-apply
+    permissions:
+      contents: read
+    env:
+      TF_STATE_BUCKET: ${{ vars.TF_STATE_BUCKET }}
+      TF_VAR_cloud_id: ${{ vars.TF_VAR_CLOUD_ID }}
+      TF_VAR_folder_id: ${{ vars.TF_VAR_FOLDER_ID }}
+      TF_VAR_zone: ${{ vars.TF_VAR_ZONE }}
+      TF_VAR_subnet_id: ${{ vars.TF_VAR_SUBNET_ID }}
+      TF_VAR_ssh_public_key: ${{ secrets.TF_VAR_SSH_PUBLIC_KEY }}
+      YC_TOKEN: ${{ secrets.YC_TOKEN }}
+      S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+      S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.0"
+
+      - name: Проверка обязательных Variables/Secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          required=(
+            TF_STATE_BUCKET
+            TF_VAR_cloud_id
+            TF_VAR_folder_id
+            TF_VAR_zone
+            TF_VAR_subnet_id
+            TF_VAR_ssh_public_key
+            YC_TOKEN
+            S3_ACCESS_KEY_ID
+            S3_SECRET_ACCESS_KEY
+          )
+          for name in "${required[@]}"; do
+            if [ -z "${!name:-}" ]; then
+              echo "Отсутствует обязательное значение: ${name}"
+              exit 1
+            fi
+          done
+          echo "Все обязательные Variables/Secrets заданы."
+
+      - name: Terraform init + destroy
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "Task2Advanced/envs/${TF_ENV}"
+
+          cat > backend.hcl <<EOF
+          bucket = "${TF_STATE_BUCKET}"
+          key    = "task2/${TF_ENV}/terraform.tfstate"
+          region = "ru-central1"
+          endpoint = "https://storage.yandexcloud.net"
+          skip_credentials_validation = true
+          skip_region_validation = true
+          skip_requesting_account_id = true
+          skip_metadata_api_check = true
+          use_path_style = true
+          skip_s3_checksum = true
+          EOF
+
+          cat > ci.auto.tfvars <<EOF
+          vm_name        = "ci-${TF_ENV}-demo"
+          cores          = 2
+          memory_gb      = 2
+          disk_size_gb   = 10
+          subnet_id      = "${TF_VAR_subnet_id}"
+          ssh_public_key = "${TF_VAR_ssh_public_key}"
+          EOF
+
+          terraform init -input=false -backend-config=backend.hcl
+          terraform destroy -auto-approve -input=false -lock=false
